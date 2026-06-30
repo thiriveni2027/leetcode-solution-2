@@ -1,0 +1,24 @@
+class Solution {
+    public int differenceOfSum(int[] A) {
+    int elementSum = 0;
+    int digitSum = 0;
+
+    for(int i = 0; i < A.length; i++)
+    {
+        elementSum = elementSum + A[i];
+
+        int num = A[i];
+
+        while(num > 0)
+        {
+            digitSum = digitSum + num % 10;
+            num = num / 10;
+        }
+    }
+
+    if(elementSum > digitSum)
+        return elementSum - digitSum;
+    else
+        return digitSum - elementSum;
+}
+}
